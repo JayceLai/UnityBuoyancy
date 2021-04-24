@@ -379,7 +379,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &17116417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2198,7 +2198,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &208866426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2301,7 +2301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242393624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.68, y: 19.2, z: 0}
+  m_LocalPosition: {x: -1.61, y: 19.2, z: 3.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 375391038}
@@ -4520,7 +4520,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &515561994
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5022,7 +5022,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &529938898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6120,7 +6120,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &668454918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9453,7 +9453,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1062053136
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13817,7 +13817,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1482458992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14447,7 +14447,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1527880054
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14709,7 +14709,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1533617999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15980,7 +15980,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1707989387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16243,7 +16243,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1761855623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17117,7 +17117,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1805872577
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17967,7 +17967,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1842093300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18493,7 +18493,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &1878642664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19428,6 +19428,7 @@ GameObject:
   - component: {fileID: 2043126613}
   - component: {fileID: 2043126612}
   - component: {fileID: 2043126611}
+  - component: {fileID: 2043126610}
   m_Layer: 0
   m_Name: DebugCube
   m_TagString: Untagged
@@ -19448,7 +19449,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!111 &2043126610
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043126608}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 2a2e6e70b2feeb343af714a86c1eeeaa, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 2a2e6e70b2feeb343af714a86c1eeeaa, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!54 &2043126611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20036,7 +20053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110964553}
   m_LocalRotation: {x: -0.6294493, y: -0, z: -0, w: 0.7770416}
-  m_LocalPosition: {x: 2.8800004, y: 29.37097, z: -2.6240177}
+  m_LocalPosition: {x: 2.8800004, y: 13.92, z: -2.6240177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 375391038}
@@ -21209,13 +21226,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4404148687782105194}
-  m_LocalRotation: {x: 0.00000008146034, y: -1.8841744e-15, z: 1.5348549e-22, w: 1}
-  m_LocalPosition: {x: -0.07069355, y: 1.1327748, z: -0.00006782532}
+  m_LocalRotation: {x: 0.000000081425235, y: -0.0000000023919726, z: -0.029363584, w: 0.9995689}
+  m_LocalPosition: {x: -0.07069337, y: 1.1327745, z: -0.00006771088}
   m_LocalScale: {x: 49.23279, y: 49.23279, z: 43.812862}
   m_Children: []
   m_Father: {fileID: 543450652967246915}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.365}
 --- !u!4 &3386774004848788914
 Transform:
   m_ObjectHideFlags: 0
@@ -22527,7 +22544,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &9113548934497378035
 MonoBehaviour:
   m_ObjectHideFlags: 0
