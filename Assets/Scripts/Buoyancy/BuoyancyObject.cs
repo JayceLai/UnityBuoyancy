@@ -150,10 +150,6 @@ namespace BuoyancyScope
                         {
                             voxels.Add(point);
                         }
-                        // if (PointIsInsideCollider(_colliders[0], point, ref bounds))
-                        // {
-                        //     voxels.Add(transform.InverseTransformPoint(point));
-                        // }
                     }
                 }
             }
@@ -172,23 +168,6 @@ namespace BuoyancyScope
         {
             var cp = Physics.ClosestPoint(p, c, Vector3.zero, Quaternion.identity);
             return Vector3.Distance(cp, p) < 0.01f;
-        }
-
-        private bool PointIsInsideCollider(Collider c, Vector3 p, ref Bounds cb)
-        {
-            float rayLength = cb.size.magnitude;
-            Ray ray = new Ray(p, c.transform.position - p);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, rayLength))
-            {
-                if (hit.collider == c)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
 
         private void VoxelBounds(ref Bounds bounds)

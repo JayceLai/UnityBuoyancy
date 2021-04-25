@@ -20736,7 +20736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugForce: 0
-  debugVoxels: 1
+  debugVoxels: 0
   calculateDensity: 0
   density: 3
   normalizedVoxelSize: 0.5
