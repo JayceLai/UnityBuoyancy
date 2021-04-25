@@ -144,20 +144,40 @@ namespace BuoyancyScope
                 // Debug sufrace normal
                 if (debugNormal)
                 {
-                    var vertices = worldVertices;
-                    var triangles = mesh.triangles;
-                    for (int i = 0; i < triangles.Length; i += 3)
+                    int[] triangles = mesh.triangles;
+                    if (useJobs)
                     {
-                        Gizmos.color = Color.white;
-                        Gizmos.DrawLine(vertices[triangles[i + 0]], vertices[triangles[i + 1]]);
-                        Gizmos.DrawLine(vertices[triangles[i + 1]], vertices[triangles[i + 2]]);
-                        Gizmos.DrawLine(vertices[triangles[i + 2]], vertices[triangles[i + 0]]);
+                        NativeArray<Vector3> vertices = worldVerticesNative;
+                        for (int i = 0; i < triangles.Length; i += 3)
+                        {
+                            Gizmos.color = Color.white;
+                            Gizmos.DrawLine(vertices[triangles[i + 0]], vertices[triangles[i + 1]]);
+                            Gizmos.DrawLine(vertices[triangles[i + 1]], vertices[triangles[i + 2]]);
+                            Gizmos.DrawLine(vertices[triangles[i + 2]], vertices[triangles[i + 0]]);
 
-                        Vector3 center = MathfUtils.GetAveratePoint(vertices[triangles[i + 0]], vertices[triangles[i + 1]], vertices[triangles[i + 2]]);
-                        Vector3 normal = GetSurfaceNormal(center);
+                            Vector3 center = MathfUtils.GetAveratePoint(vertices[triangles[i + 0]], vertices[triangles[i + 1]], vertices[triangles[i + 2]]);
+                            Vector3 normal = GetSurfaceNormal(center);
 
-                        Gizmos.color = Color.green;
-                        Gizmos.DrawLine(center, center + normal);
+                            Gizmos.color = Color.green;
+                            Gizmos.DrawLine(center, center + normal);
+                        }
+                    }
+                    else
+                    {
+                        var vertices = worldVertices;
+                        for (int i = 0; i < triangles.Length; i += 3)
+                        {
+                            Gizmos.color = Color.white;
+                            Gizmos.DrawLine(vertices[triangles[i + 0]], vertices[triangles[i + 1]]);
+                            Gizmos.DrawLine(vertices[triangles[i + 1]], vertices[triangles[i + 2]]);
+                            Gizmos.DrawLine(vertices[triangles[i + 2]], vertices[triangles[i + 0]]);
+
+                            Vector3 center = MathfUtils.GetAveratePoint(vertices[triangles[i + 0]], vertices[triangles[i + 1]], vertices[triangles[i + 2]]);
+                            Vector3 normal = GetSurfaceNormal(center);
+
+                            Gizmos.color = Color.green;
+                            Gizmos.DrawLine(center, center + normal);
+                        }
                     }
                 }
 
@@ -169,6 +189,13 @@ namespace BuoyancyScope
                         for (int i = 0; i < worldVertices.Length; i++)
                         {
                             DebugUtils.DrawPoint(worldVertices[i], Color.red);
+                        }
+                    }
+                    else if (worldVerticesNative != null)
+                    {
+                        for (int i = 0; i < worldVerticesNative.Length; i++)
+                        {
+                            DebugUtils.DrawPoint(worldVerticesNative[i], Color.red);
                         }
                     }
                 }
@@ -252,7 +279,8 @@ namespace BuoyancyScope
                 // float noiseValue = Noise(vertex.x + noiseWalk, vertex.y);
                 vertex.y += Noise(vertex.x + noiseWalk, vertex.y /*+ Mathf.Sin(Time.time * 0.1f)*/) * noiseStrength;
                 vertices[index] = vertex;
-                worldVertices[index] = worldMat * vertex;
+                var point = new Vector4(vertex.x, vertex.y, vertex.z, 1.0f);
+                worldVertices[index] = worldMat * point;
             }
 
             private float Noise(float x, float y)
